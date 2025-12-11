@@ -8,7 +8,7 @@ Dashboard de analíticas en tiempo real para el chatbot de biología educativa c
 
 ## 🚀 Acceso al Dashboard
 
-**[🔗 Abrir Reporte](https://uxdigitalchile.github.io/Dashboard_Biologia/index.html)**
+**[🔗 Abrir Reporte](https://uxdigitalchile.github.io/Dashboard_Biologia/)**
 
 ---
 
@@ -21,15 +21,15 @@ Dashboard de analíticas en tiempo real para el chatbot de biología educativa c
 - 📊 **Total de Calificaciones**: Cantidad de evaluaciones recibidas
 
 ### Visualizaciones Interactivas
-- 📅 **Conversaciones por Día**: Gráfico de línea que muestra la evolución temporal de las interacciones
+- 📅 **Conversaciones por Día**: Gráfico de línea que muestra la evolución temporal
 - ⏰ **Conversaciones por Hora**: Distribución de uso durante las 24 horas del día
 - ⭐ **Distribución de Calificaciones**: Gráfico de barras con ratings del 1 al 5
 - 📈 **Ratings por Día**: Evolución temporal del promedio de calificaciones
 
 ### Gestión de Datos
-- 📧 **Emails de Usuarios**: Visualización de correos electrónicos recopilados automáticamente
+- 📧 **Emails de Usuarios**: Visualización de correos recopilados automáticamente
 - 💬 **Historial de Conversaciones**: Tabla detallada con todas las interacciones
-- 🕐 **Zona Horaria Chile**: Todas las fechas mostradas en hora local de Chile (UTC-3/UTC-4)
+- 🕐 **Zona Horaria Chile**: Fechas en hora local de Chile (UTC-3/UTC-4)
 - 📄 **Paginación**: Visualización de 25 registros por página
 - 💾 **Exportación CSV**: Descarga completa de datos para análisis externo
 
@@ -42,44 +42,36 @@ Dashboard de analíticas en tiempo real para el chatbot de biología educativa c
 
 ## 🔑 Configuración
 
-Para usar el dashboard necesitas configurar:
-
-1. **URL de Supabase**: 
-   - Tu URL de proyecto (ejemplo: `https://tuproyecto.supabase.co`)
-
-2. **API Key (Anon/Public)**:
-   - Clave pública de Supabase para acceso de lectura
-
 ### Primera Configuración
 
-1. Abre el [dashboard](https://uxdigitalchile.github.io/Dashboard_Biologia/index.html)
-2. Ingresa tu URL de Supabase
-3. Ingresa tu API Key pública
-4. Haz clic en "Conectar y Cargar Datos"
+1. Abre el [dashboard](https://uxdigitalchile.github.io/Dashboard_Biologia/)
+2. Ingresa tu **URL de Supabase** (ej: `https://tuproyecto.supabase.co`)
+3. Ingresa tu **API Key pública** (anon key)
+4. Haz clic en **"Conectar y Cargar Datos"**
 
-Las credenciales se guardan automáticamente en tu navegador (localStorage) para futuras visitas.
+Las credenciales se guardan automáticamente en tu navegador para futuras visitas.
 
 ---
 
 ## 🛠️ Tecnologías
 
 ### Frontend
-- **HTML5, CSS3, JavaScript**: Interfaz de usuario moderna y responsive
-- **Chart.js**: Librería para visualizaciones interactivas de datos
+- **HTML5, CSS3, JavaScript** - Interfaz responsive
+- **Chart.js** - Visualizaciones interactivas
 
 ### Backend & Base de Datos
-- **Supabase (PostgreSQL)**: Base de datos relacional con API REST
-- **Row Level Security (RLS)**: Políticas de seguridad para acceso controlado
-- **Triggers automáticos**: Extracción inteligente de emails y ratings
+- **Supabase (PostgreSQL)** - Base de datos con API REST
+- **Row Level Security (RLS)** - Seguridad de acceso
+- **Triggers automáticos** - Extracción de emails y ratings
 
 ### Automatización & AI
-- **n8n**: Workflow automation para orquestación del chatbot
-- **OpenAI GPT**: Modelo de lenguaje para respuestas del chatbot
-- **Google Gemini File Search**: Sistema RAG para búsqueda en documentos de biología
+- **n8n** - Workflow automation
+- **OpenAI GPT** - Modelo de lenguaje
+- **Google Gemini File Search** - Sistema RAG
 
 ---
 
-## 📊 Arquitectura del Sistema
+## 📊 Arquitectura
 
 ```
 Usuario → n8n Chatbot → OpenAI GPT + Gemini RAG
@@ -92,70 +84,58 @@ Usuario → n8n Chatbot → OpenAI GPT + Gemini RAG
          Dashboard (GitHub Pages)
 ```
 
-### Flujo de Datos
-
-1. **Usuario interactúa** con el chatbot de biología
-2. **n8n captura** la conversación y la envía a OpenAI/Gemini
-3. **PostgreSQL almacena** cada mensaje en tabla `chat_rag_uxd`
-4. **Trigger automático** detecta y extrae:
-   - Email del usuario (patrón: `usuario@dominio.com`)
-   - Rating (1-5 estrellas) cuando se solicita
-5. **Dashboard consulta** datos vía Supabase REST API
-6. **Visualización** en tiempo real de métricas y gráficos
-
 ---
 
 ## 📁 Estructura de Archivos
 
 ```
 Dashboard_Biologia/
-├── README.md                          # Este archivo
-├── logo.png                           # Logo de UXDigital
-├── dashboard_v3.html                  # Dashboard principal (USAR ESTA)
-├── dashboard_v2_fixed.html            # Versión anterior
-└── dashboard_Agente_Biologia_V1.html  # Primera versión
+├── README.md      # Documentación
+├── logo.png       # Logo de UXDigital
+├── index.html     # Dashboard principal ⭐
+└── ...           # Versiones anteriores
 ```
+
+**Nota**: `index.html` es la página principal que se carga automáticamente.
 
 ---
 
 ## 🔒 Seguridad
 
-- ✅ RLS (Row Level Security) habilitado en Supabase
-- ✅ Solo lectura pública mediante API Key anon
-- ✅ Sin acceso a operaciones de escritura/eliminación
-- ✅ Credenciales almacenadas localmente (no enviadas a terceros)
+- ✅ RLS habilitado en Supabase
+- ✅ Solo lectura mediante API Key pública
+- ✅ Sin acceso a escritura/eliminación
+- ✅ Credenciales almacenadas localmente
 
 ---
 
 ## 📞 Soporte
 
-Para preguntas o soporte técnico, contacta a:
-
 **UXDigital**  
-🌐 Website: [uxdigital.cl](https://uxdigital.cl)
+🌐 [uxdigital.cl](https://uxdigital.cl)
 
 ---
 
 ## 📝 Notas de Versión
 
-### v3.0 (Actual)
-- ✨ Nuevo título: "Reporte Agente Virtual de Biología"
-- 🎨 Logo de UXDigital en el header
-- 📱 Diseño completamente responsive
-- 🕐 Corrección de zona horaria Chile (UTC-3)
-- ⭐ Sistema de ratings 1-5 estrellas
-- 📧 Extracción automática de emails
+### v3.1 (Actual)
+- 🎨 Logo embebido en HTML (carga instantánea)
+- 🔗 URL simplificada: index.html
+- ✅ Sin dependencias externas para logo
+
+### v3.0
+- ✨ Título: "Reporte Agente Virtual de Biología"
+- 📱 Diseño responsive completo
+- 🕐 Zona horaria Chile corregida
+- ⭐ Sistema de ratings 1-5
 
 ### v2.0
-- 📊 4 gráficos interactivos con Chart.js
-- 📄 Paginación de tabla (25 registros)
-- 💾 Exportación a CSV
-- 🎨 Mejoras visuales y UX
+- 📊 Gráficos interactivos
+- 📄 Paginación y CSV
+- 🎨 Mejoras UX
 
 ### v1.0
 - 🚀 Lanzamiento inicial
-- 📊 Métricas básicas
-- 📋 Tabla de conversaciones
 
 ---
 
