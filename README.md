@@ -52,7 +52,7 @@ Para usar el dashboard necesitas configurar:
 
 ### Primera Configuración
 
-1. Abre el [dashboard](https://uxdigitalchile.github.io/Dashboard_Biologia/dashboard_v3.html)
+1. Abre el [dashboard](https://uxdigitalchile.github.io/Dashboard_Biologia/index.html)
 2. Ingresa tu URL de Supabase
 3. Ingresa tu API Key pública
 4. Haz clic en "Conectar y Cargar Datos"
