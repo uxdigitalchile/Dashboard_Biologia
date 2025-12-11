@@ -8,7 +8,7 @@ Dashboard de analíticas en tiempo real para el chatbot de biología educativa c
 
 ## 🚀 Acceso al Dashboard
 
-**[🔗 Abrir Reporte](https://uxdigitalchile.github.io/Dashboard_Biologia/dashboard_v3.html)**
+**[🔗 Abrir Reporte](https://uxdigitalchile.github.io/Dashboard_Biologia/index.html)**
 
 ---
 
