@@ -983,11 +983,10 @@
                 
                 let dateChile = 'N/A';
                 try {
-                    // PostgreSQL devuelve UTC, Chile está en UTC-3 (horario de verano dic-mar)
                     const utcDate = new Date(item.created_at);
-                    // Restar 3 horas de UTC para obtener hora Chile (UTC-3)
-                    // Ejemplo: 22:00 UTC = 19:00 Chile
-                    const chileDate = new Date(utcDate.getTime() - (3 * 60 * 60 * 1000));
+                    // NOTA: La base de datos guarda en hora Chile (no en UTC)
+                    // Por lo tanto NO necesitamos restar 3 horas
+                    const chileDate = utcDate;
                     
                     // Formatear en formato legible
                     const day = String(chileDate.getUTCDate()).padStart(2, '0');
@@ -1055,8 +1054,8 @@
                 let dateChile = 'N/A';
                 try {
                     const utcDate = new Date(item.created_at);
-                    // Restar 3 horas de UTC para obtener hora Chile (UTC-3)
-                    const chileDate = new Date(utcDate.getTime() - (3 * 60 * 60 * 1000));
+                    // La base de datos guarda en hora Chile (no UTC)
+                    const chileDate = utcDate;
                     
                     const day = String(chileDate.getUTCDate()).padStart(2, '0');
                     const month = String(chileDate.getUTCMonth() + 1).padStart(2, '0');
