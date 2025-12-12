@@ -581,7 +581,7 @@
                 console.log('Probando conexión a:', supabaseUrl);
                 
                 // Test connection
-                const data = await fetchSupabase('chat_rag_uxd?select=id&limit=1');
+                const data = await fetchSupabase('agente_biologia_ava?select=id&limit=1');
                 
                 console.log('Conexión exitosa!');
                 showStatus('✅ Conectado', false);
@@ -600,7 +600,7 @@
                     1. La URL es correcta: ${supabaseUrl}<br>
                     2. La clave anon es correcta<br>
                     3. Row Level Security está configurado con política de lectura pública<br>
-                    4. La tabla 'chat_rag_uxd' existe
+                    4. La tabla 'agente_biologia_ava' existe
                 `, true);
             }
         }
@@ -611,7 +611,7 @@
             document.getElementById('loading').style.display = 'block';
 
             try {
-                let query = 'chat_rag_uxd?select=id,session_id,message,user_email,rating,created_at,created_at_chile:created_at&order=created_at.desc';
+                let query = 'agente_biologia_ava?select=id,session_id,message,user_email,rating,created_at,created_at_chile:created_at&order=created_at.desc';
 
                 // Apply filters
                 const period = document.getElementById('period-filter').value;
